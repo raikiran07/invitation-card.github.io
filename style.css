@@ -28,6 +28,7 @@ background: linear-gradient(90deg, rgba(17,36,0,0.7) 0%, rgba(105,233,72,0.7) 0%
 input{
     font-size:18px;
     padding:10px;
+    border-radius:5px;
 }
 
 .btn{
