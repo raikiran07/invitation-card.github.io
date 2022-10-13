@@ -8,20 +8,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="welcome-back (1).png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://parall.ax/parallax/js/jspdf.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div class="container">
-        <h1 id="heading" >Welcome to Gorkha Fresher's 2022 <br>Kaziranga University</h1>
+        <h1 id="heading">Welcome to Gorkha Fresher's 2022 <br>Kaziranga University</h1>
         <input type="text" id="user-name" placeholder="enter your full name" required> <br>
         <button type="submit" id="submit-btn" class="btn" >Submit</button>
-        <div class="card hide" id="main-card">
-            <h1 id="card-heading">Hello <span id="name">Kiran</span></h1>
-            <p>I <strong>Akash Chetry</strong> President of Gorkha Community(KU) on behalf of all the <br>gorkha students of KU humbly invite you for the Gorkha Fresher's Meet 2022. <br>
+        <div class="card hide" id="main-card" style="font-family:Satisfy, cursive;">
+            <h1 style="color:rgb(248, 93, 233);">Hello <strong><span id="name" style="color:rgb(248, 93, 233);"></span></span></strong></h1>
+            <p>I <strong>Akash Chetry,</strong> President of Gorkha Community(KU) on behalf of all the <br>
+                gorkha students of KU humbly invite you for the Gorkha Fresher's Meet 2022. <br>
             We hope your presence in this auspicious occassion and very excited to see you on <span class="imp">Saturday 2PM</span> at <span class="imp">KU Cafe</span>.</p>
 
             <ul class="list">
@@ -30,20 +30,28 @@
                 <li>Time : 2PM</li>
                <li>Venue : KU Cafe</li>
             </ul>
-            <p>Thank You!!</p>
+            <p style="color:rgb(248, 93, 233)">Thank You!!</p>
         </div>
         <button class="btn hide" id="download">Download</button>
     </div>
     
-   <script src="./script.js"></script>
-    <script>
+    <script src="./script.js"></script>
+    <script type="text/javascript">
 
         const downloadBtn = document.getElementById("download");
-        const cardContainer = document.querySelector(".card");
         
       function generatePDF() {
+ 
+      var doc = new jsPDF();
+ 
     
-      html2pdf().from(cardContainer).save("invitation.pdf");
+ 
+      doc.fromHTML(document.getElementById("main-card"),15,15)
+      
+ 
+     
+ 
+      doc.save(`${document.getElementById("user-name").value}-invitation.pdf`)
       }
 
       downloadBtn.addEventListener("click",generatePDF);
