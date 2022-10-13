@@ -75,3 +75,8 @@ input{
 .hide{
     display:none;
 }
+
+
+#symbol{
+    margin-bottom:2rem;
+}
