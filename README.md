@@ -3,6 +3,8 @@
 ### html, css , javascript and jspdf
 
 # Code of conduct for contributors
+### star the repo
+### fork it to your personal github account
 ### Please see the issues already created before creating a new issue
 ### please try to solve the issue in the issue list before suggesting a new issue
 ### create a new branch before making PR
