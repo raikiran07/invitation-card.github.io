@@ -56,6 +56,12 @@
      
  
       doc.save(`${document.getElementById("user-name").value}-invitation.pdf`)
+
+      //Reseting the home page after clicking the download button
+      document.getElementById("user-name").value = "";
+      document.querySelector(".card").classList.add("hide");
+      document.getElementById("download").classList.add("hide");
+
       }
 
       downloadBtn.addEventListener("click",generatePDF);
